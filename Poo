@@ -162,7 +162,55 @@ class ContaNoBanco(var senha: Int, var saldo: Double,
     
 }
 */
+//---------------------------------------------------------------------------------------------
+/*
+fun main() {
+  /*
+    var dinossauro = Animal("réptil",'M', "Rio Tietê",
+                           "Carnívoro",397, true)
+    //print("Meu dinossauro é um "+dinossauro.classe+", ele é "+ dinossauro.dieta+" e ele mora no "+dinossauro.habitat)
+    dinossauro.Atacar(false)
+    dinossauro.cuspirFogo(false)
+    */
+    val contaCorrente = ContaNoBanco(4002, 8922.01, "Safra",
+                                     "Franco Francescco Aguero")
+    contaCorrente.consultarSaldo()
+    contaCorrente.deposito(00.01)
+    contaCorrente.consultarSaldo()
+    
+}
 
+
+
+class ContaNoBanco(var senha: Int, var saldo: Double,
+                  var banco: String, var dono: String,
+                  ){
+    
+    fun consultarSaldo(){
+        println("O saldo da sua conta é R$$saldo")
+    }
+    
+    fun saque(valorSaque: Double){
+        if(valorSaque <= 0){
+            println("Impossível sacar R$$valorSaque")
+        }else if(saldo >= valorSaque){
+            saldo -= valorSaque
+            println("Saque de R$$valorSaque realizado com sucesso")
+        }else{
+            println("Saldo insuficiente, saque de R$$valorSaque não realizado")
+        }
+    }
+    //Exercício -- Faça um novo método para que possamos depositar dinheiro na conta
+    fun deposito(valorDeposito: Double){
+        if(valorDeposito <= 0){
+            println("Depósito de R$$valorDeposito impossível de ser realizado")
+        }else{
+            saldo += valorDeposito
+            println("Depósito de R$$valorDeposito realizado com sucesso")
+        }
+    }
+}
+*/
 
 
 
